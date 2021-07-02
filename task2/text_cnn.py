@@ -17,7 +17,8 @@ class TextCNN(Model):
                  max_features,
                  kernel_sizes=[3, 4, 5],
                  class_num=5,
-                 last_activation='sigmoid'):
+                 last_activation='sigmoid',
+                 embedding_matrix=None):
         """
         初始化TextCNN
         :param max_len: 句长度
@@ -34,9 +35,14 @@ class TextCNN(Model):
         self.kernel_sizes = kernel_sizes
         self.class_num = class_num
         self.last_activation = last_activation
+        self.embedding_matrix = embedding_matrix
 
-        self.embedding = Embedding(self.max_features, self.embedding_dim,
-                                   input_length=self.max_len)
+        if self.embedding_matrix is None:
+            self.embedding = Embedding(self.max_features, self.embedding_dim,
+                                        input_length=self.max_len)
+        else:
+            self.embedding = Embedding(self.max_features, self.embedding_dim,\
+                             input_length=self.max_len, weights=[embedding_matrix])
         self.convs = []
         self.max_poolings = []
         for kernel_size in self.kernel_sizes:

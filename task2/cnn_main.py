@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 """
- @Time: 2021/6/29 下午1:52
+ @Time: 2021/7/2 下午4:29
  @Author: LiuHe
- @File: CNN.py
- @Describe: 使用CNN进行文本分类
+ @File: cnn_main.py
+ @Describe: 使用cnn 实现文本分类
 """
 from tensorflow import keras
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -89,4 +89,3 @@ def plot_graphs(history, string):
 
 plot_graphs(history, 'accuracy')
 plot_graphs(history, 'loss')
-

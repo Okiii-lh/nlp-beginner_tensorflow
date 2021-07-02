@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 """
- @Time: 2021/7/2 下午4:06
+ @Time: 2021/7/2 下午4:28
  @Author: LiuHe
- @File: RNN.py
- @Describe: TextRNN
+ @File: text_rnn.py
+ @Describe: 实现RNN网络结构
 """
 from tensorflow.keras import Model
 from tensorflow.keras.layers import Embedding, Dense, LSTM
