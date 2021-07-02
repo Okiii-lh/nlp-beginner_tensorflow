@@ -16,7 +16,7 @@ class TextCNN(Model):
                  embedding_dim,
                  max_features,
                  kernel_sizes=[3, 4, 5],
-                 class_num=1,
+                 class_num=5,
                  last_activation='sigmoid'):
         """
         初始化TextCNN
